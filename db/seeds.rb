@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+0.upto(25) do |order|
+  Order.create(product_ids: [rand(10), rand(10), rand(10)])
+end
