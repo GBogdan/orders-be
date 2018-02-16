@@ -30,6 +30,8 @@ class Api::V1::OrdersController < ApplicationController
     render json: order, serializer: OrderSerializer
   end
 
+  private
+
   def order_params
     {
       status: params[:data][:attributes][:status],

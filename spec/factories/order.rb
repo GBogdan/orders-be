@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :order do
-    description { 'asdf' }
-
+    description { 'just a random description' }
   end
 end
