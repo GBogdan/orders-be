@@ -10,7 +10,6 @@ gem 'pg'
 gem 'puma'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors'
-gem 'aasm', '~> 4.12'
 
 group :development do
   gem 'listen'
