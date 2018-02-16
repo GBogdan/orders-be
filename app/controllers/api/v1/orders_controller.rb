@@ -3,6 +3,8 @@ class Api::V1::OrdersController < ApplicationController
   def index
     orders = Order.all
 
+    orders = orders.by_status(params[:status]) if params[:status].present?
+  
     render json: orders, each_serializer: OrderSerializer
   end
 
