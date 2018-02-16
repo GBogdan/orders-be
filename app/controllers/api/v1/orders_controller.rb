@@ -13,9 +13,9 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def create
-    order = Order.new(product_ids: params[:data][:attributes][:product_ids])
+    order = Order.new(description: params[:data][:attributes][:description])
 
-    order.save or raise_api_error(order.error)
+    order.save!
 
     render json: order, serializer: OrderSerializer
   end
@@ -23,7 +23,7 @@ class Api::V1::OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
 
-    order.update(profile_params) or raise_api_error(order.error)
+    order.update!(profile_params)
 
     render json: order, serializer: OrderSerializer
   end
@@ -31,14 +31,8 @@ class Api::V1::OrdersController < ApplicationController
   def profile_params
     {
       status: params[:data][:attributes][:status],
-      product_ids: params[:data][:attributes][:product_ids]
+      description: params[:data][:attributes][:description]
     }
-  end
-
-  private
-
-  def raise_api_error(error)
-    render json: { error: error }, status: 404
   end
 
 end

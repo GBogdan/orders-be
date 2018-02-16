@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.12.3)
+      concurrent-ruby (~> 1.0)
     actioncable (5.1.5)
       actionpack (= 5.1.5)
       nio4r (~> 2.0)
@@ -95,6 +97,7 @@ GEM
       pry (>= 0.9.11)
     puma (3.11.2)
     rack (2.0.4)
+    rack-cors (0.4.1)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.5)
@@ -154,7 +157,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    state_machines (0.5.0)
     thor (0.20.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
@@ -167,6 +169,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm (~> 4.12)
   active_model_serializers (~> 0.10.0)
   database_cleaner
   factory_bot
@@ -176,11 +179,11 @@ DEPENDENCIES
   pry-rails
   pry-stack_explorer
   puma
+  rack-cors
   rails
   rspec-rails
   spring
   spring-watcher-listen
-  state_machines
 
 BUNDLED WITH
    1.16.1

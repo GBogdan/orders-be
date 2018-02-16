@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
 
-  attributes :product_ids, :status
+  attributes :description, :status
 
 end

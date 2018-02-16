@@ -8,5 +8,5 @@
 
 
 0.upto(25) do |order|
-  Order.create(product_ids: [rand(10), rand(10), rand(10)])
+  Order.create(description: "detail for order with id #{order}")
 end
