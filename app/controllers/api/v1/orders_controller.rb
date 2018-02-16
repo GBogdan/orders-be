@@ -4,7 +4,7 @@ class Api::V1::OrdersController < ApplicationController
     orders = Order.all
 
     orders = orders.by_status(params[:status]) if params[:status].present?
-  
+
     render json: orders, each_serializer: OrderSerializer
   end
 
@@ -25,12 +25,12 @@ class Api::V1::OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
 
-    order.update!(profile_params)
+    order.update!(order_params)
 
     render json: order, serializer: OrderSerializer
   end
 
-  def profile_params
+  def order_params
     {
       status: params[:data][:attributes][:status],
       description: params[:data][:attributes][:description]
